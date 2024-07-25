@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator CDA LASVEGAS</title>
+    <title>Calculator IMPOZIT LASVEGAS</title>
     <style>
         body {
             margin: 0;
@@ -173,7 +173,7 @@
             margin: 0;
         }
         .input-container {
-            position: relative;
+               position: relative;
         }
         .error-message {
             color: red; /* Culoare pentru mesajul de eroare */
@@ -184,43 +184,41 @@
     </style>
 </head>
 <body>
-        <header>
-            <a href="https://remusdogg.github.io/depozit-lv/">
-                <img src="https://btpro-lasvegas.betconstruct.com/images/logo.f52d76ae4bf8c6507ebc790ebc5195cb.png" alt="LasVegas Logo" class="logo">
-            </a>
-            <div class="title" data-ro="CALCULATOR COMISION DE ADMINISTRARE" data-en="ADMINISTRATION FEE CALCULATOR">CALCULATOR COMISION DE ADMINISTRARE</div>
-            <div class="language-select">
-                <select class="dropdown" id="language-dropdown" onchange="changeLanguage()">
-                    <option value="ro">RO</option>
-                    <option value="en">EN</option>
-                </select>
-            </div>
-        </header>
-        <p id="error-message" class="error-message" style="display: none;"></p>		
+    <header>
+        <img src="https://btpro-lasvegas.betconstruct.com/images/logo.f52d76ae4bf8c6507ebc790ebc5195cb.png" alt="LasVegas Logo" class="logo" onclick="location.reload();">
+        <div class="title" data-ro="CALCULATOR IMPOZIT PENTRU RETRAGERI" data-en="WITHDRAWAL TAX CALCULATOR">CALCULATOR IMPOZIT PENTRU RETRAGERI</div>
+        <div class="language-select">
+            <select class="dropdown" id="language-dropdown" onchange="changeLanguage()">
+                <option value="ro">RO</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+        <p id="error-message" class="error-message" style="display: none;"></p>	
             <div class="main-content">
                 <div class="text-section">
             <div class="box">
                 <label for="amount" data-ro="Introduceți suma:" data-en="Enter amount:">Introduceți suma:</label>
-                <input type="number" id="amount" class="amount-input" placeholder="Introduceți suma în LEI" data-ro="Introduceți suma în LEI" data-en="Enter amount in LEI" step="0.01" max="45000">
-                <p id="error-message" class="error-message" style="display: none;">Limita maximă de depunere a fost atinsă!</p>
-			</div>	
+                <input type="number" id="amount" class="amount-input" placeholder="Introduceți suma în LEI" data-ro="Introduceți suma în LEI" data-en="Enter amount in LEI" step="0.01" max="9800">
+                <p id="error-message" class="error-message" style="display: none;">Limita maximă de retragere a fost atinsă!</p>
+            </div>
 			<div>
-			    <p data-ro="Suma depusă în contul clientului:" data-en="Amount deposited into the customer's account:">Suma depusă în contul clientului:</p>
-			    <p id="deposit" class="amount-display">- LEI</p>
+ 			    <p data-ro="Retragere:" data-en="Withdrawal:">Retragere:</p>
+ 			    <p id="deposit" class="amount-display">- LEI</p>
 			</div>
 			<div>
-			    <p data-ro="Comision de administrare (2%):" data-en="Administration fee (2%):">Comision de administrare (2%):</p>
+ 			    <p data-ro="Impozit aplicat:" data-en="Applied tax:">Impozit aplicat:</p>
  			    <p id="fee" class="amount-display">- LEI</p>
 			</div>
             <div class="box">
-                <p data-ro="Sumarul tranzacției de depunere:" data-en="Deposit transaction summary:">Sumarul tranzacției de depunere:</p>
+                <p data-ro="Sumarul tranzacției de retragere:" data-en="Withdrawal transaction summary:">Sumarul tranzacției de retragere:</p>
                 <p id="summary"></p>
             </div>
             <div class="box">
-			    <p data-ro="Regulament pentru depuneri:" data-en="Deposit fee (CDA 2%):">Regulament pentru depuneri:</p>
-                <p data-ro="Conform legislației în vigoare, este obligatoriu ca sumele depuse pentru jocurile de noroc să provină dintr-o sursă deținută în calitate de titular conform OUG 114/2018. Pentru fiecare depunere în contul de joc se percepe un comision de administrare în valoare de 2%."
-                   data-en="According to current legislation, it is mandatory that the amounts deposited for gambling come from a source owned as the holder according to GEO 114/2018. An administrative fee of 2% is charged for each deposit into the game account.">
-                   Conform legislației în vigoare, este obligatoriu ca sumele depuse pentru jocurile de noroc să provină dintr-o sursă deținută în calitate de titular conform OUG 114/2018. Pentru fiecare depunere în contul de joc se percepe un comision de administrare în valoare de 2%.
+			    <p data-ro="Regulament pentru retragerile:" data-en="Rules for withdrawals:">Regulament pentru retragerile:</p>
+                <p data-ro="Potrivit modificărilor Codului Fiscal și Ordonanței Guvernului nr. 16/2022, organizatorii de jocuri de noroc au obligația de a reține și de a vira, în numele participanților, impozitul aferent veniturilor realizate ca urmare a participării la aceste activități. După efectuarea unei retrageri, suma ce va fi transmisă către procesatorul de plăți va reflecta în mod automat noua sumă după deducerea impozitul aplicat. Retragerile se vor efectua doar prin metode folosite la depunere și în conformitate cu art.130, alin 9, din Anexa 1 la HG 111/ 2016."
+                   data-en="According to the amendments to the Fiscal Code and Government Ordinance no. 16/2022, gambling organizers are required to withhold and remit, on behalf of participants, the tax related to the income earned from participating in these activities. After a withdrawal is made, the amount transmitted to the payment processor will automatically reflect the new amount after deducting the applicable tax. Withdrawals will be processed only through the methods used for deposits and in accordance with Article 130, paragraph 9, from Annex 1 to Government Decision 111/2016.">
+                   Potrivit modificărilor Codului Fiscal și Ordonanței Guvernului nr. 16/2022, organizatorii de jocuri de noroc au obligația de a reține și de a vira, în numele participanților, impozitul aferent veniturilor realizate ca urmare a participării la aceste activități. După efectuarea unei retrageri, suma ce va fi transmisă către procesatorul de plăți va reflecta în mod automat noua sumă după deducerea impozitul aplicat. Retragerile se vor efectua doar prin metode folosite la depunere și în conformitate cu art.130, alin 9, din Anexa 1 la HG 111/ 2016.
                 </p>
             </div>
 			    <div id="virtual-keyboard" class="virtual-keyboard">
@@ -236,176 +234,158 @@
                 <div class="key" onclick="addToInput('0')">0</div>
                 <div class="key delete" onclick="removeLastCharacter()">&#9003;</div>
                 <div class="key confirm" onclick="confirmInput()">&#10004;</div>
-            </div>
+            </div>	
         </div>
         <div class="image-section">
             <img src="https://btpro-lasvegas.betconstruct.com/images/client-transaction-illustration.c4684c2b5c2e72455f4aa2f8ea43ffdc.png" alt="Client Transaction Illustration">
         </div>
     </div>
 <script>
-// JavaScript pentru calculul CDA
-const amountInput = document.getElementById('amount');
-const depositDisplay = document.getElementById('deposit');
-const feeDisplay = document.getElementById('fee');
-const summaryDisplay = document.getElementById('summary');
-const errorMessage = document.getElementById('error-message');
+    // JavaScript pentru calculul CDA
+    const amountInput = document.getElementById('amount');
+    const depositDisplay = document.getElementById('deposit');
+    const feeDisplay = document.getElementById('fee');
+    const summaryDisplay = document.getElementById('summary');
+    const errorMessage = document.getElementById('error-message');
 
-const translations = {
-    ro: {
-        errorMin: 'Suma minimă de depunere este de 1 LEU!',
-        errorMax: 'Limita maximă de depunere a fost atinsă!',
-        summary: (amount, fee, deposit) => 
-            `Suma primită de la client a fost de ${amount.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI, la care se aplică comisionul de administrare (CDA 2%) de ${fee.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI urmând ca diferența de ${deposit.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI să fie disponibilă în balanța contului de client.`
-    },
-    en: {
-        errorMin: 'The minimum deposit amount is 1 LEU!',
-        errorMax: 'The maximum deposit limit has been reached!',
-        summary: (amount, fee, deposit) => 
-            `The amount received from the client was ${amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI, with an administration fee (CDA 2%) of ${fee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI, leaving a balance of ${deposit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI available in the client's account balance.`
-    }
-};
-
-let currentLanguage = 'ro';
-
-document.getElementById('language-dropdown').addEventListener('change', () => {
-    currentLanguage = document.getElementById('language-dropdown').value;
-    // Update displayed texts based on the selected language
-    updateErrorMessage();
-    updateSummary();
-    updatePlaceholders();
-});
-
-amountInput.addEventListener('input', () => {
-    let amount = parseFloat(amountInput.value.replace(/\./g, '').replace(/,/g, '.'));
-    if (!isNaN(amount)) {
-        if (amount < 1 || amount > 45000) {
-            errorMessage.style.display = 'block';
-            if (amount < 1) {
-                errorMessage.textContent = translations[currentLanguage].errorMin;
+    amountInput.addEventListener('input', () => {
+        let amount = parseFloat(amountInput.value.replace(/\./g, '').replace(/,/g, '.'));
+        if (!isNaN(amount)) {
+            if (amount < 1 || amount > 9800) {
+                errorMessage.style.display = 'block';
+                if (amount < 20) {
+                    errorMessage.textContent = 'Suma minimă de retragere este de 20 LEI!';
+                } else {
+                    errorMessage.textContent = 'Limita maximă de retragere a fost atinsă!';
+                }
+                amountInput.value = '';
+                depositDisplay.textContent = '- LEI';
+                feeDisplay.textContent = '- LEI';
+                summaryDisplay.textContent = '';
             } else {
-                errorMessage.textContent = translations[currentLanguage].errorMax;
+                errorMessage.style.display = 'none';
+                const fee = amount * 0.03;
+                const deposit = amount - fee;
+                depositDisplay.textContent = `${deposit.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
+                feeDisplay.textContent = `${fee.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
+                summaryDisplay.textContent = `
+                    Suma brută pe care clientul dorește să o retragă este de ${amount.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI la care se aplică impozitul aferent veniturilor realizate de ${fee.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI urmând ca diferența de ${deposit.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI să-i fie înmânată clientului.
+                `;
             }
-            amountInput.value = '';
+        } else {
             depositDisplay.textContent = '- LEI';
             feeDisplay.textContent = '- LEI';
             summaryDisplay.textContent = '';
-        } else {
-            errorMessage.style.display = 'none';
-            const fee = amount * 0.02;
-            const deposit = amount - fee;
-            depositDisplay.textContent = `${deposit.toLocaleString(currentLanguage === 'ro' ? 'ro-RO' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
-            feeDisplay.textContent = `${fee.toLocaleString(currentLanguage === 'ro' ? 'ro-RO' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
-            updateSummary(amount, fee, deposit);
-        }
-    } else {
-        depositDisplay.textContent = '- LEI';
-        feeDisplay.textContent = '- LEI';
-        summaryDisplay.textContent = '';
-    }
-});
-
-function updateSummary(amount, fee, deposit) {
-    if (amount && fee && deposit) {
-        summaryDisplay.textContent = translations[currentLanguage].summary(amount, fee, deposit);
-    } else {
-        summaryDisplay.textContent = '';
-    }
-}
-
-function updateErrorMessage() {
-    if (errorMessage.style.display === 'block') {
-        if (amountInput.value < 1) {
-            errorMessage.textContent = translations[currentLanguage].errorMin;
-        } else {
-            errorMessage.textContent = translations[currentLanguage].errorMax;
-        }
-    }
-}
-
-function updatePlaceholders() {
-    document.querySelectorAll('[data-ro]').forEach(element => {
-        if (element.tagName.toLowerCase() === 'input' && element.hasAttribute('placeholder')) {
-            element.setAttribute('placeholder', element.getAttribute(`data-${currentLanguage}`));
-        } else {
-            element.textContent = element.getAttribute(`data-${currentLanguage}`);
         }
     });
-}
 
-// Virtual Keyboard and Initial Setup
+// Language change function
+function changeLanguage() {
+    const language = document.getElementById('language-dropdown').value;
+    document.querySelectorAll('[data-ro]').forEach(element => {
+        element.textContent = element.getAttribute(`data-${language}`);
+    });
+}
 document.addEventListener('DOMContentLoaded', function() {
+    const amountInput = document.getElementById('amount');
     const keyboard = document.getElementById('virtual-keyboard');
+    const errorMessage = document.getElementById('error-message');
+
+    // Afișează tastatura la focus
     amountInput.addEventListener('focus', function() {
         keyboard.style.display = 'grid';
     });
 
+    // Ascunde tastatura la click în afara tastaturii sau a inputului
     document.addEventListener('click', function(event) {
         if (!keyboard.contains(event.target) && event.target !== amountInput) {
             keyboard.style.display = 'none';
         }
     });
 
+    // Asigură-te că tastatura este ascunsă inițial
     keyboard.style.display = 'none';
 
+    // Ascunde mesajul de eroare când câmpul de introducere este focalizat
     amountInput.addEventListener('focus', function() {
         errorMessage.style.display = 'none';
     });
 });
 
 function addToInput(value) {
-    let currentValue = amountInput.value;
+    const inputField = document.getElementById('amount');
+    const errorMessage = document.getElementById('error-message');
+    let currentValue = inputField.value;
 
-    if (value === '.' && currentValue.includes('.')) return;
+    if (value === '.' && currentValue.includes('.')) {
+        return; // Permite doar un singur punct decimal
+    }
 
-    if (value === '0' && (currentValue === '' || currentValue === '0')) return;
+    if (value === '0' && (currentValue === '' || currentValue === '0')) {
+        return; // Evită zerourile multiple la început
+    }
 
-    if (currentValue === '0' && value !== '.') currentValue = '';
+    if (currentValue === '0' && value !== '.') {
+        currentValue = ''; // Resetează dacă s-a început cu 0 și se introduce altceva decât punct
+    }
 
     const newValue = currentValue + value;
-    if (parseFloat(newValue) > 45000) {
-        showError('Suma maximă este 45000 LEI!', 'Maximum amount is 45000 LEI!');
+    if (parseFloat(newValue) > 9800) {
+        showError('Suma maximă este 9800 LEI!', 'Maximum amount is 9800 LEI!');
         return;
     }
 
-    amountInput.value = newValue;
-    errorMessage.style.display = 'none';
+    inputField.value = newValue;
+    errorMessage.style.display = 'none'; // Ascunde mesajul de eroare dacă totul este corect
     updateCalculations();
 }
 
 function removeLastCharacter() {
-    amountInput.value = amountInput.value.slice(0, -1);
-    errorMessage.style.display = 'none';
+    const inputField = document.getElementById('amount');
+    const errorMessage = document.getElementById('error-message');
+    inputField.value = inputField.value.slice(0, -1);
+    errorMessage.style.display = 'none'; // Ascunde mesajul de eroare dacă totul este corect
     updateCalculations();
 }
 
 function confirmInput() {
-    const currentValue = amountInput.value;
+    const inputField = document.getElementById('amount');
+    const errorMessage = document.getElementById('error-message');
+    let currentValue = inputField.value;
+
     const amount = parseFloat(currentValue);
-    if (isNaN(amount) || amount < 1 || amount > 45000) {
-        showError('Suma trebuie să fie între 1 și 45000 LEI!', 'Amount must be between 1 and 45000 LEI!');
+    if (isNaN(amount) || amount < 20 || amount > 9800) {
+        showError('Suma trebuie să fie între 20 și 9800 LEI!', 'Amount must be between 20 and 9800 LEI!');
         return;
     }
 
-    errorMessage.style.display = 'none';
+    errorMessage.style.display = 'none'; // Ascunde mesajul de eroare dacă totul este corect
+    console.log('Input confirmed: ', currentValue);
     updateCalculations();
 }
 
 function showError(messageRo, messageEn) {
-    errorMessage.textContent = currentLanguage === 'ro' ? messageRo : messageEn;
+    const errorMessage = document.getElementById('error-message');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const language = languageDropdown ? languageDropdown.value : 'ro'; // Default to Romanian if dropdown is not found
+    errorMessage.textContent = language === 'ro' ? messageRo : messageEn;
     errorMessage.style.display = 'block';
 }
 
 function updateCalculations() {
-    const amount = parseFloat(amountInput.value) || 0;
-    const taxRate = 0.02;
-    const fee = amount * taxRate;
-    const deposit = amount - fee;
+    const inputField = document.getElementById('amount');
+    const amount = parseFloat(inputField.value) || 0;
 
-    depositDisplay.textContent = `${deposit.toLocaleString(currentLanguage === 'ro' ? 'ro-RO' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
-    feeDisplay.textContent = `${fee.toLocaleString(currentLanguage === 'ro' ? 'ro-RO' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
-    summaryDisplay.textContent = translations[currentLanguage].summary(amount, fee, deposit);
+    const taxRate = 0.03;
+    const taxAmount = amount * taxRate;
+    const withdrawalAmount = amount - taxAmount;
+
+    document.getElementById('deposit').textContent = withdrawalAmount.toFixed(2) + " LEI";
+    document.getElementById('fee').textContent = taxAmount.toFixed(2) + " LEI";
+    document.getElementById('summary').textContent = `
+        Suma brută pe care clientul dorește să o retragă este de ${amount.toFixed(2)} LEI, la care se aplică impozitul aferent veniturilor realizate de ${taxAmount.toFixed(2)} LEI, urmând ca diferența de ${withdrawalAmount.toFixed(2)} LEI să fie înmânată clientului.
+    `;
 }
-
 </script>
 </body>
 </html>
