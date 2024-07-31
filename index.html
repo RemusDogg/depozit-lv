@@ -33,88 +33,53 @@
             position: absolute;
             background: none;
             cursor: pointer;
-            border: 2px solid red; /* Contur pentru vizualizare */
+            border: none; /* Contur pt vizualizare (defaultȘ   2px solid red )*/
             border-radius: 2%;
         }
-        
-        /* Stiluri pentru modul normal (web view) */
-        .webview .button-deposit {
-            top: 62vh; /* Procentaj relativ la înălțimea vizibilă a ecranului */
-            left: 37.8vw; /* Procentaj relativ la lățimea vizibilă a ecranului */
-            width: 11.2vw; /* Procentaj relativ la lățimea vizibilă a ecranului */
-            height: 7.5vh; /* Procentaj relativ la înălțimea vizibilă a ecranului */
-        }
-        .webview .button-withdraw {
-            top: 62vh;
-            left: 51vw;
-            width: 11.2vw;
-            height: 7.5vh;
+        .button-deposit {
+            top: 63.5%;
+            left: 37.8%;
+            width: 11.2%;
+            height: 10.25%;
         }
 
-        /* Stiluri pentru modul full screen */
-        .fullscreen .button-deposit {
-            /* Setările pentru butoane în modul full screen */
-            /* Completează cu valorile tale */
-            top: 65vh;
-            left: 39vw;
-            width: 10vw;
-            height: 8vh;
+        .button-withdraw {
+            top: 63.5%;
+            left: 51.0%;
+            width: 11.2%;
+            height: 10.25%;
         }
-        .fullscreen .button-withdraw {
-            /* Setările pentru butoane în modul full screen */
-            /* Completează cu valorile tale */
-            top: 69vh;
-            left: 52vw;
-            width: 10vw;
-            height: 8vh;
-        }
-
         /* Media Queries */
         @media (max-width: 1024px) {
             .button-deposit, .button-withdraw {
-                width: 15vw;
-                height: 12vh;
+                width: 15%;
+                height: 1%;
                 border-radius: 3%;
             }
         }
         @media (max-width: 768px) {
             .button-deposit, .button-withdraw {
-                width: 20vw;
-                height: 15vh;
+                width: 20%;
+                height: 10%;
                 border-radius: 4%;
             }
         }
         @media (max-width: 480px) {
             .button-deposit, .button-withdraw {
-                width: 25vw;
-                height: 18vh;
+                width: 25%;
+                height: 12%;
                 border-radius: 5%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container" id="main-container">
+    <div class="container">
         <img src="https://iili.io/dx8zO5x.png" alt="Las Vegas Logo with Buttons">
-        <button class="button button-deposit" onclick="window.location.href='https://remusdogg.github.io/depozit-lv/CDA.html'"></button>
+        <button class="button button-deposit" onclick="window.location.href='https://RemusDogg.github.io/depozit-lv/cdafinal.html'"></button>
+        <button class="button button-withdraw" onclick="window.location.href='impozit.html'"></button>
+        <button class="button button-deposit" onclick="window.location.href='https://RemusDogg.github.io/depozit-lv/CDA.html'"></button>
         <button class="button button-withdraw" onclick="window.location.href='https://RemusDogg.github.io/depozit-lv/IMPOZIT.html'"></button>
     </div>
-    <script>
-        function adjustView() {
-            var container = document.getElementById("main-container");
-            if (document.fullscreenElement) {
-                container.classList.add("fullscreen");
-                container.classList.remove("webview");
-            } else {
-                container.classList.add("webview");
-                container.classList.remove("fullscreen");
-            }
-        }
-
-        document.addEventListener("fullscreenchange", adjustView);
-
-        // Apelăm funcția inițial pentru a seta starea corectă
-        adjustView();
-    </script>
 </body>
 </html>
