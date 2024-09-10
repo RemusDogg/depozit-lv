@@ -201,7 +201,7 @@
                 <div class="text-section">
             <div class="box">
                 <label for="amount" data-ro="Introduceți suma:" data-en="Enter amount:">Introduceți suma:</label>
-                <input type="number" id="amount" class="amount-input" placeholder="Introduceți suma în LEI" data-ro="Introduceți suma în LEI" data-en="Enter amount in LEI" step="0.01" max="9800">
+                <input type="number" id="amount" class="amount-input" placeholder="Introduceți suma în LEI" data-ro="Introduceți suma în LEI" data-en="Enter amount in LEI" step="0.01" max="10000">
                 <p id="error-message" class="error-message" style="display: none;">Limita maximă de retragere a fost atinsă!</p>
             </div>
 			<div>
@@ -253,7 +253,7 @@
     amountInput.addEventListener('input', () => {
         let amount = parseFloat(amountInput.value.replace(/\./g, '').replace(/,/g, '.'));
         if (!isNaN(amount)) {
-            if (amount < 1 || amount > 9800) {
+            if (amount < 1 || amount > 10000) {
                 errorMessage.style.display = 'block';
                 if (amount < 20) {
                     errorMessage.textContent = 'Suma minimă de retragere este de 20 LEI!';
@@ -332,8 +332,8 @@ function addToInput(value) {
     }
 
     const newValue = currentValue + value;
-    if (parseFloat(newValue) > 9800) {
-        showError('Suma maximă este 9800 LEI!', 'Maximum amount is 9800 LEI!');
+    if (parseFloat(newValue) > 10000) {
+        showError('Suma maximă este 10.000 LEI!', 'Maximum amount is 10.000 LEI!');
         return;
     }
 
@@ -356,8 +356,8 @@ function confirmInput() {
     let currentValue = inputField.value;
 
     const amount = parseFloat(currentValue);
-    if (isNaN(amount) || amount < 20 || amount > 9800) {
-        showError('Suma trebuie să fie între 20 și 9800 LEI!', 'Amount must be between 20 and 9800 LEI!');
+    if (isNaN(amount) || amount < 20 || amount > 10000) {
+        showError('Suma trebuie să fie între 20 și 10.000 LEI!', 'Amount must be between 20 and 10.000 LEI!');
         return;
     }
 
