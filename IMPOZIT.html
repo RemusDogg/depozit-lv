@@ -185,7 +185,7 @@
 </head>
 <body>
     <header>
-            <a href="https://remusdogg.github.io/depozit-lv/">
+            <a href="https://remusdogg.github.io/depozit-lv/"> /* 06.02.2026 */
                 <img src="https://btpro-lasvegas.betconstruct.com/images/logo.f52d76ae4bf8c6507ebc790ebc5195cb.png" alt="LasVegas Logo" class="logo">
             </a>
         <div class="title" data-ro="CALCULATOR IMPOZIT PENTRU RETRAGERI" data-en="WITHDRAWAL TAX CALCULATOR">CALCULATOR IMPOZIT PENTRU RETRAGERI</div>
@@ -205,11 +205,11 @@
                 <p id="error-message" class="error-message" style="display: none;">Limita maximă de retragere a fost atinsă!</p>
             </div>
 			<div>
- 			    <p data-ro="Retragere:" data-en="Withdrawal:">Retragere:</p>
+ 			    <p data-ro="Retragere din contul clientului (NET):" data-en="Withdrawal from the client’s account (NET):">Retragere din contul clientului (NET):</p>
  			    <p id="deposit" class="amount-display">- LEI</p>
 			</div>
 			<div>
- 			    <p data-ro="Impozit aplicat:" data-en="Applied tax:">Impozit aplicat:</p>
+ 			    <p data-ro="Impozit aplicat (4%):" data-en="Applied tax (4%):">Impozit aplicat (4%):</p>
  			    <p id="fee" class="amount-display">- LEI</p>
 			</div>
             <div class="box">
@@ -218,9 +218,9 @@
             </div>
             <div class="box">
 			    <p data-ro="Regulament pentru retragerile:" data-en="Rules for withdrawals:">Regulament pentru retragerile:</p>
-                <p data-ro="Potrivit modificărilor Codului Fiscal și Ordonanței Guvernului nr. 16/2022, organizatorii de jocuri de noroc au obligația de a reține și de a vira, în numele participanților, impozitul aferent veniturilor realizate ca urmare a participării la aceste activități. După efectuarea unei retrageri, suma ce va fi transmisă către procesatorul de plăți va reflecta în mod automat noua sumă după deducerea impozitul aplicat. Retragerile se vor efectua doar prin metode folosite la depunere și în conformitate cu art.130, alin 9, din Anexa 1 la HG 111/ 2016."
-                   data-en="According to the amendments to the Fiscal Code and Government Ordinance no. 16/2022, gambling organizers are required to withhold and remit, on behalf of participants, the tax related to the income earned from participating in these activities. After a withdrawal is made, the amount transmitted to the payment processor will automatically reflect the new amount after deducting the applicable tax. Withdrawals will be processed only through the methods used for deposits and in accordance with Article 130, paragraph 9, from Annex 1 to Government Decision 111/2016.">
-                   Potrivit modificărilor Codului Fiscal și Ordonanței Guvernului nr. 16/2022, organizatorii de jocuri de noroc au obligația de a reține și de a vira, în numele participanților, impozitul aferent veniturilor realizate ca urmare a participării la aceste activități. După efectuarea unei retrageri, suma ce va fi transmisă către procesatorul de plăți va reflecta în mod automat noua sumă după deducerea impozitul aplicat. Retragerile se vor efectua doar prin metode folosite la depunere și în conformitate cu art.130, alin 9, din Anexa 1 la HG 111/ 2016.
+                <p data-ro="Potrivit modificărilor din legea 141/2025 asupra Codului Fiscal din legea 227/2015, organizatorii de jocuri de noroc au obligația de a reține și de a vira, în numele participanților, impozitul aferent veniturilor realizate ca urmare a participării la aceste activități. După efectuarea unei retrageri, suma ce va fi transmisă către procesatorul de plăți va reflecta în mod automat noua sumă după deducerea impozitul aplicat. Retragerile se vor efectua doar prin metode folosite la depunere și în conformitate cu art.130, alin 9, din Anexa 1 la HG 111/ 2016 și cu moficările ulterioare în conformitate cu Legislația Aplicabilă."
+                   data-en="According to the amendments introduced by Law no. 141/2025 to the Fiscal Code under Law no. 227/2015, gambling operators are required to withhold and remit, on behalf of participants, the tax due on the income obtained as a result of participation in these activities. After a withdrawal is processed, the amount transmitted to the payment processor will automatically reflect the new amount after deduction of the applicable tax. Withdrawals will be carried out only through the methods used for deposits and in accordance with Article 130, paragraph 9, of Annex 1 to Government Decision no. 111/2016, as subsequently amended, in compliance with the applicable legislation.">
+                   Potrivit modificărilor din legea 141/2025 asupra Codului Fiscal din legea 227/2015, organizatorii de jocuri de noroc au obligația de a reține și de a vira, în numele participanților, impozitul aferent veniturilor realizate ca urmare a participării la aceste activități. După efectuarea unei retrageri, suma ce va fi transmisă către procesatorul de plăți va reflecta în mod automat noua sumă după deducerea impozitul aplicat. Retragerile se vor efectua doar prin metode folosite la depunere și în conformitate cu art.130, alin 9, din Anexa 1 la HG 111/ 2016 și cu moficările ulterioare în conformitate cu Legislația Aplicabilă.
                 </p>
             </div>
 			    <div id="virtual-keyboard" class="virtual-keyboard">
@@ -253,7 +253,7 @@
     amountInput.addEventListener('input', () => {
         let amount = parseFloat(amountInput.value.replace(/\./g, '').replace(/,/g, '.'));
         if (!isNaN(amount)) {
-            if (amount < 1 || amount > 10000) {
+            if (amount < 1 || amount > 200000) {
                 errorMessage.style.display = 'block';
                 if (amount < 20) {
                     errorMessage.textContent = 'Suma minimă de retragere este de 20 LEI!';
@@ -266,7 +266,7 @@
                 summaryDisplay.textContent = '';
             } else {
                 errorMessage.style.display = 'none';
-                const fee = amount * 0.03;
+                const fee = amount * 0.04;
                 const deposit = amount - fee;
                 depositDisplay.textContent = `${deposit.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
                 feeDisplay.textContent = `${fee.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} LEI`;
@@ -332,8 +332,8 @@ function addToInput(value) {
     }
 
     const newValue = currentValue + value;
-    if (parseFloat(newValue) > 10000) {
-        showError('Suma maximă este 10.000 LEI!', 'Maximum amount is 10.000 LEI!');
+    if (parseFloat(newValue) > 200000) {
+        showError('Suma maximă este 200.000 LEI!', 'Maximum amount is 200.000 LEI!');
         return;
     }
 
@@ -356,8 +356,8 @@ function confirmInput() {
     let currentValue = inputField.value;
 
     const amount = parseFloat(currentValue);
-    if (isNaN(amount) || amount < 20 || amount > 10000) {
-        showError('Suma trebuie să fie între 20 și 10.000 LEI!', 'Amount must be between 20 and 10.000 LEI!');
+    if (isNaN(amount) || amount < 20 || amount > 200000) {
+        showError('Suma trebuie să fie între 20 și 200.000 LEI!', 'Amount must be between 20 and 200.000 LEI!');
         return;
     }
 
@@ -378,7 +378,7 @@ function updateCalculations() {
     const inputField = document.getElementById('amount');
     const amount = parseFloat(inputField.value) || 0;
 
-    const taxRate = 0.03;
+    const taxRate = 0.04;
     const taxAmount = amount * taxRate;
     const withdrawalAmount = amount - taxAmount;
 
