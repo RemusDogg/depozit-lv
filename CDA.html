@@ -185,7 +185,7 @@
 </head>
 <body>
         <header>
-            <a href="https://remusdogg.github.io/depozit-lv/">
+            <a href="https://remusdogg.github.io/depozit-lv/"> /* 06.02.2026 */
                 <img src="https://btpro-lasvegas.betconstruct.com/images/logo.f52d76ae4bf8c6507ebc790ebc5195cb.png" alt="LasVegas Logo" class="logo">
             </a>
             <div class="title" data-ro="CALCULATOR COMISION DE ADMINISTRARE" data-en="ADMINISTRATION FEE CALCULATOR">CALCULATOR COMISION DE ADMINISTRARE</div>
@@ -218,9 +218,9 @@
             </div>
             <div class="box">
 			    <p data-ro="Regulament pentru depuneri:" data-en="Deposit fee (CDA 2%):">Regulament pentru depuneri:</p>
-                <p data-ro="Conform legislației în vigoare, este obligatoriu ca sumele depuse pentru jocurile de noroc să provină dintr-o sursă deținută în calitate de titular conform OUG 114/2018. Pentru fiecare depunere în contul de joc se percepe un comision de administrare în valoare de 2%."
-                   data-en="According to current legislation, it is mandatory that the amounts deposited for gambling come from a source owned as the holder according to GEO 114/2018. An administrative fee of 2% is charged for each deposit into the game account.">
-                   Conform legislației în vigoare, este obligatoriu ca sumele depuse pentru jocurile de noroc să provină dintr-o sursă deținută în calitate de titular conform OUG 114/2018. Pentru fiecare depunere în contul de joc se percepe un comision de administrare în valoare de 2%.
+                <p data-ro="Conform legislației în vigoare, este obligatoriu ca sumele depuse pentru jocurile de noroc să provină dintr-o sursă deținută în calitate de titular conform OUG 114/2018 și cu moficările ulterioare în conformitate cu Legislația Aplicabilă. Pentru fiecare depunere în contul de joc se percepe un comision de administrare în valoare de 2%."
+                   data-en="In accordance with the applicable legislation, the amounts deposited for gambling activities must originate from a source held by the participant as the account holder, in compliance with Government Emergency Ordinance no. 114/2018, as subsequently amended, and in accordance with the applicable legislation. For each deposit into the gaming account, an administration fee of 2% is charged.">
+                   Conform legislației în vigoare, este obligatoriu ca sumele depuse pentru jocurile de noroc să provină dintr-o sursă deținută în calitate de titular conform OUG 114/2018 și cu moficările ulterioare în conformitate cu Legislația Aplicabilă. Pentru fiecare depunere în contul de joc se percepe un comision de administrare în valoare de 2%.
                 </p>
             </div>
 			    <div id="virtual-keyboard" class="virtual-keyboard">
@@ -278,7 +278,7 @@ document.getElementById('language-dropdown').addEventListener('change', () => {
 amountInput.addEventListener('input', () => {
     let amount = parseFloat(amountInput.value.replace(/\./g, '').replace(/,/g, '.'));
     if (!isNaN(amount)) {
-        if (amount < 1 || amount > 45000) {
+        if (amount < 1 || amount > 100000) {
             errorMessage.style.display = 'block';
             if (amount < 1) {
                 errorMessage.textContent = translations[currentLanguage].errorMin;
@@ -362,8 +362,8 @@ function addToInput(value) {
     if (currentValue === '0' && value !== '.') currentValue = '';
 
     const newValue = currentValue + value;
-    if (parseFloat(newValue) > 45000) {
-        showError('Suma maximă este 45000 LEI!', 'Maximum amount is 45000 LEI!');
+    if (parseFloat(newValue) > 100000) {
+        showError('Suma maximă este 100000 LEI!', 'Maximum amount is 100000 LEI!');
         return;
     }
 
@@ -381,8 +381,8 @@ function removeLastCharacter() {
 function confirmInput() {
     const currentValue = amountInput.value;
     const amount = parseFloat(currentValue);
-    if (isNaN(amount) || amount < 1 || amount > 45000) {
-        showError('Suma trebuie să fie între 1 și 45000 LEI!', 'Amount must be between 1 and 45000 LEI!');
+    if (isNaN(amount) || amount < 1 || amount > 100000) {
+        showError('Suma trebuie să fie între 1 și 100000 LEI!', 'Amount must be between 1 and 100000 LEI!');
         return;
     }
 
